@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 :root {
   --text-hero: clamp(2.6rem, 6vw, 4rem);
@@ -20,6 +21,9 @@
   --btn-lg: 1em 2em;
   --logo-clr: #EA90AC;
   --alt-clr: #E78AA6;
+}
+body{
+  background: #FFF5E9;
 }
 .header{
   position: relative;
