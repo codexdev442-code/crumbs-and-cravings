@@ -1,0 +1,170 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --text-hero: clamp(2.6rem, 6vw, 4rem);
+  --text-h1: clamp(2.8rem, 4vw, 4rem);
+  --text-h2: clamp(1.8rem, 3vw, 2.4rem);
+  --text-h3: clamp(1.28rem, 2.3vw, 1.5rem);
+  --text-body: 1.15rem;
+  --text-small: 1.1rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+  --btn-sm: 0em 0.35em;
+  --btn-md: 0.75em 1.5em;
+  --btn-lg: 1em 2em;
+  --logo-clr: #EA90AC;
+  --alt-clr: #E78AA6;
+}
+.header{
+  position: relative;
+}
+.menu{
+  width: 50px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  opacity: 0;
+  animation: show 1s ease forwards;
+  animation-delay: 2.2s;
+}
+.menu div{
+  width: 100%;
+  height: 5.8px;
+  background: #fff;
+  border-radius: 5px;
+}
+.navbar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem var(--space-xs);
+  background: var(--alt-clr);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.logo_wrapper{
+  height: auto;
+  width: 4rem;
+  position: relative;
+  opacity: 0;
+  animation: show 1s ease forwards;
+  animation-delay: 2.2s;
+}
+@keyframes show{
+  to{opacity: 1;}
+}
+.logo_wrapper img{
+  width: 100%;
+  border-radius: 50%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+.logo_wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: 60%;
+  height: 60%;
+  background: white;
+  border-radius: 50%;
+}
+.overlay{
+  background: var(--alt-clr);
+  position: absolute;
+  top: 76px;
+  height: 90.5vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: shrink 1.5s ease forwards;
+  animation-delay: 1.8s;
+}
+@keyframes shrink{
+  to{ height: 0;}
+}
+.img_wrapper {
+  width: 18rem;
+  position: relative;
+  margin-top: 50px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn{
+  to{opacity: 1; margin-top: 0;}
+}
+.img_wrapper img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  animation: remove 0.5s ease forwards;
+  animation-delay: 1.8s;
+}
+@keyframes remove{
+  to{ display: none;}
+}
+
+.img_wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: 80%;
+  height: 80%;
+  background: white;
+  border-radius: 50%;
+}
+#home{
+  background: url("hero_background.png") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  padding: var(--space-xl) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xl);
+}
+.hero_text{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.hero_heading{
+  width: 95vw;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: var(--text-h1);
+  color: #FF4D6D;
+}
+.sub_text{
+  color: #4A4A4A;
+  width: 80vw;
+  margin: 0 auto;
+  text-align: center;
+  font-size: var(--text-body);
+}
+.ShopbtnDiv a{
+  text-decoration: none;
+  color: #FFFFFF;
+  background: var(--logo-clr);
+  padding: var(--btn-md);
+  font-size: 1.02rem;
+  border-radius: 0.5rem;
+}
